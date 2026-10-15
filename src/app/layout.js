@@ -1,4 +1,3 @@
-import { Inter } from 'next/font/google';
 import Navbar from '@/components/Navbar/Navbar';
 import Footer from '@/components/Footer/Footer';
 import CartShell from '@/components/Cart/CartShell';
@@ -9,13 +8,6 @@ import { AuthProvider } from '@/context/AuthContext';
 import { getCart } from '@/lib/shopify/cart-actions';
 import { getShopName, getShopInfo } from '@/lib/shopify/client';
 import './globals.css';
-
-const inter = Inter({
-  subsets: ['latin'],
-  weight: ['300', '400', '500', '600', '700', '800', '900'],
-  variable: '--font-inter',
-  display: 'swap',
-});
 
 export async function generateMetadata() {
   return {
@@ -36,7 +28,7 @@ export default async function RootLayout({ children }) {
   const emailUrl = 'mailto:hello@curiouscircuitco.com';
 
   return (
-    <html lang="en" className={inter.variable} data-scroll-behavior="smooth">
+    <html lang="en" data-scroll-behavior="smooth">
       <body>
         <Suspense fallback={null}>
           <AnalyticsProviderWrapper>
