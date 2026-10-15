@@ -134,7 +134,7 @@ function handleMockRequest(query, variables) {
               id: 'gid://shopify/Collection/all',
               handle: 'all',
               title: 'All Products',
-              description: 'Browse our complete collection of Indian wear.',
+              description: 'Browse our complete collection of graphic t-shirts inspired by science, technology, and space.',
               products: { edges: mockProducts.map((node) => ({ node })) },
             },
           };
@@ -144,7 +144,7 @@ function handleMockRequest(query, variables) {
               id: 'gid://shopify/Collection/bestsellers',
               handle: 'bestsellers',
               title: 'Bestsellers',
-              description: 'Our most loved pieces, curated for you.',
+              description: 'Our most sought-after graphic tees, designed for curious minds.',
               products: { edges: mockProducts.slice(0, 3).map((node) => ({ node })) },
             },
           };
