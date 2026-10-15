@@ -1,0 +1,222 @@
+/* ── Curious Circuit Co. Footer ── */
+.footer {
+  background: #FFFFFF;
+  border-top: 1px solid #E8E8E8;
+  margin-top: 0;
+}
+
+.footerInner {
+  max-width: 1356px;
+  margin: 0 auto;
+  padding: 52px 6% 32px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
+  gap: 40px;
+  margin-bottom: 48px;
+}
+
+/* Brand column */
+.brandColumn {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.logoLink {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  color: #050505;
+  width: fit-content;
+}
+
+.logoLink:hover {
+  opacity: 0.7;
+}
+
+.logoText {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.1;
+}
+
+.logoMain {
+  font-size: 0.9rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  color: #050505;
+}
+
+.logoSub {
+  font-size: 0.62rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  color: #626262;
+}
+
+.tagline {
+  font-size: 0.78rem;
+  color: #626262;
+  line-height: 1.4;
+  max-width: 200px;
+}
+
+/* Nav columns */
+.column {
+  display: flex;
+  flex-direction: column;
+}
+
+.heading {
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: #0A0A0A;
+  margin-bottom: 18px;
+}
+
+.links {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.links a {
+  font-size: 0.82rem;
+  color: #626262;
+  text-decoration: none;
+  transition: color 0.18s ease;
+  letter-spacing: 0.01em;
+}
+
+.links a:hover {
+  color: #050505;
+  opacity: 1;
+}
+
+/* Socials */
+.socialLinks {
+  display: flex;
+  gap: 14px;
+  margin-top: 4px;
+}
+
+.socialIcon {
+  color: #626262;
+  transition: color 0.18s ease;
+  display: flex;
+  align-items: center;
+}
+
+.socialIcon:hover {
+  color: #050505;
+  opacity: 1;
+}
+
+/* Bottom bar */
+.bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 24px;
+  border-top: 1px solid #E8E8E8;
+  font-size: 0.75rem;
+  color: #888;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.copyright {
+  font-size: 0.75rem;
+  color: #888;
+}
+
+.footerLegal {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.footerLegal a {
+  color: #888;
+  font-size: 0.75rem;
+  text-decoration: none;
+  transition: color 0.18s ease;
+}
+
+.footerLegal a:hover {
+  color: #050505;
+}
+
+.separator {
+  color: #CCCCCC;
+  font-size: 0.75rem;
+}
+
+/* Dev area */
+.devClickArea {
+  text-align: center;
+  padding: 12px 0;
+  min-height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: default;
+  user-select: none;
+}
+
+.devSubtextHidden {
+  width: 100%;
+  height: 16px;
+}
+
+.devSubtextVisible {
+  text-align: center;
+  font-size: 0.72rem;
+  color: #AAAAAA;
+  letter-spacing: 0.05em;
+  opacity: 0;
+  animation: devFadeIn 0.5s ease forwards;
+}
+
+@keyframes devFadeIn {
+  from { opacity: 0; transform: translateY(4px); }
+  to   { opacity: 0.7; transform: translateY(0); }
+}
+
+/* Responsive */
+@media (max-width: 1000px) {
+  .grid {
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 32px;
+  }
+
+  .brandColumn {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 640px) {
+  .grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 28px;
+  }
+
+  .bottom {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+}
+
+@media (max-width: 380px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}

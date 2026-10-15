@@ -1,0 +1,275 @@
+/* ── Curious Circuit Co. Navbar ── */
+.navbar {
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 64px;
+  background: #FFFFFF;
+  border-bottom: 1px solid #EEEEEE;
+  z-index: 200;
+  transition: box-shadow 0.2s ease;
+  display: flex;
+  align-items: center;
+}
+
+.scrolled {
+  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.06);
+}
+
+.navInner {
+  max-width: 1356px;
+  margin: 0 auto;
+  padding: 0 6%;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+/* ── Logo ── */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  color: #050505;
+  flex-shrink: 0;
+  transition: opacity 0.18s ease;
+  width: 180px;
+}
+
+.logo:hover {
+  opacity: 0.75;
+}
+
+.circuitIcon {
+  color: #050505;
+  flex-shrink: 0;
+}
+
+.logoText {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.1;
+}
+
+.logoMain {
+  font-size: 0.9rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  color: #050505;
+}
+
+.logoSub {
+  font-size: 0.62rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  color: #626262;
+}
+
+/* ── Desktop Nav Links ── */
+.navLinks {
+  display: flex;
+  gap: 28px;
+  align-items: center;
+  flex: 1;
+}
+
+.navLink {
+  font-size: 0.83rem;
+  font-weight: 500;
+  color: #626262;
+  text-decoration: none;
+  letter-spacing: 0.03em;
+  transition: color 0.18s ease;
+  position: relative;
+}
+
+.navLink:hover {
+  color: #050505;
+  opacity: 1;
+}
+
+.navLinkActive {
+  color: #050505;
+  font-weight: 600;
+}
+
+.navLinkActive::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 100%;
+  height: 1.5px;
+  background: #050505;
+  border-radius: 2px;
+}
+
+/* ── Actions ── */
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-left: auto;
+}
+
+.iconBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #0A0A0A;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  transition: opacity 0.18s ease;
+  position: relative;
+}
+
+.iconBtn:hover {
+  opacity: 0.55;
+}
+
+.iconWrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.cartBadge {
+  position: absolute;
+  top: -6px;
+  right: -8px;
+  background: #050505;
+  color: #FFFFFF;
+  font-size: 0.58rem;
+  font-weight: 700;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.activeDot {
+  position: absolute;
+  top: -2px;
+  right: -2px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: #050505;
+}
+
+/* ── Hamburger (mobile only) ── */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+}
+
+.hamburgerLine {
+  display: block;
+  width: 20px;
+  height: 1.5px;
+  background: #050505;
+  border-radius: 2px;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  transform-origin: center;
+}
+
+.hamburgerLine.open:nth-child(1) {
+  transform: translateY(6.5px) rotate(45deg);
+}
+
+.hamburgerLine.open:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburgerLine.open:nth-child(3) {
+  transform: translateY(-6.5px) rotate(-45deg);
+}
+
+/* ── Mobile Drawer ── */
+.mobileDrawer {
+  display: none;
+  overflow: hidden;
+  max-height: 0;
+  opacity: 0;
+  transition: max-height 0.3s ease, opacity 0.25s ease;
+  background: #FFFFFF;
+  border-top: 1px solid #EEEEEE;
+  padding: 0 6%;
+}
+
+.mobileDrawerOpen {
+  max-height: 240px;
+  opacity: 1;
+  padding: 12px 6% 20px;
+}
+
+.mobileNavLink {
+  display: block;
+  padding: 12px 0;
+  font-size: 0.9rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #626262;
+  border-bottom: 1px solid #F0F0F0;
+  transition: color 0.18s ease;
+}
+
+.mobileNavLink:last-child {
+  border-bottom: none;
+}
+
+.mobileNavLink:hover,
+.mobileNavLinkActive {
+  color: #050505;
+  opacity: 1;
+}
+
+.mobileOverlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.2);
+  z-index: 199;
+}
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+  .navLinks {
+    display: none;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  .mobileDrawer {
+    display: block;
+    position: absolute;
+    top: 64px;
+    left: 0;
+    width: 100%;
+    z-index: 199;
+  }
+
+  .logo {
+    width: auto;
+  }
+
+  .actions {
+    gap: 12px;
+  }
+}

@@ -1,0 +1,301 @@
+/* ── Brand Story – Rounded Bento Grid ── */
+.brandStoryLayout {
+  display: flex;
+  flex-direction: column;
+  background-color: #050505;
+  color: #fff;
+  padding-bottom: 80px;
+}
+
+/* Base resets & typography */
+.titleSerif {
+  font-family: var(--font-serif);
+  font-weight: 400;
+  line-height: 1.1;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.textSans {
+  font-family: var(--font-sans);
+  font-weight: 300;
+  line-height: 1.6;
+  letter-spacing: 0.02em;
+}
+
+/* ═══════════════════════════════════ */
+/* ── Hero Block                    ── */
+/* ═══════════════════════════════════ */
+.heroBlock {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  margin-bottom: 60px;
+}
+
+.heroVideo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.7;
+  z-index: 0;
+}
+
+.quoteOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.4) 70%, #050505 100%);
+  z-index: 1;
+}
+
+.heroOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 0%, transparent 60%, #050505 100%);
+  z-index: 1;
+}
+
+.storyOverlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 1;
+}
+
+.heroContent {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  padding: 0 10%;
+  width: 100%;
+}
+
+.contentBottomLeft {
+  position: absolute;
+  bottom: 10%;
+  left: 10%;
+  text-align: left;
+  padding: 0;
+  width: auto;
+  max-width: 80%;
+  z-index: 2;
+}
+
+.contentBottomRight {
+  position: absolute;
+  bottom: 10%;
+  right: 10%;
+  text-align: right;
+  padding: 0;
+  width: auto;
+  max-width: 80%;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.storyTitle {
+  font-size: clamp(3rem, 8vw, 6rem);
+  margin-bottom: 1rem;
+  color: #fff;
+  line-height: 1.1;
+}
+
+.storyText {
+  font-size: clamp(1.2rem, 2vw, 1.8rem);
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.heroStoreName {
+  font-size: clamp(4rem, 12vw, 10rem);
+  margin-bottom: 2rem;
+  color: #fff;
+  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+}
+
+.heroTagline {
+  font-size: clamp(1.2rem, 2vw, 2rem);
+  color: #D4AF37;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+}
+
+.scrollDownIndicator {
+  margin-top: 40px;
+  color: rgba(255, 255, 255, 0.7);
+  animation: float 3s ease-in-out infinite;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  pointer-events: none;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(12px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
+/* ═══════════════════════════════════ */
+/* ── Rounded Bento Grid            ── */
+/* ═══════════════════════════════════ */
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 20px;
+  width: 100%;
+}
+
+.bentoGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+/* Base cell styling matching homepage rounded edges */
+.bentoCell {
+  position: relative;
+  overflow: hidden;
+  border-radius: 32px;
+  /* Very rounded edges like homepage */
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  display: flex;
+  flex-direction: column;
+}
+
+.span1 {
+  grid-column: span 1;
+}
+
+.span2 {
+  grid-column: span 2;
+}
+
+.textOnlyCell {
+  padding: 40px;
+  justify-content: center;
+  background: rgba(20, 20, 20, 0.6);
+  min-height: 400px;
+}
+
+.videoOnlyCell {
+  min-height: 400px;
+}
+
+.quoteCell {
+  grid-column: span 3;
+  min-height: 400px;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 60px;
+}
+
+/* Common Cell Contents */
+.cellMedia {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.8;
+  z-index: 0;
+  transition: transform 0.8s ease;
+}
+
+.bentoCell:hover .cellMedia {
+  transform: scale(1.03);
+}
+
+.cellOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0.1) 100%);
+  z-index: 1;
+}
+
+.cellContentOverlay {
+  position: relative;
+  z-index: 2;
+  padding: 40px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+/* Readable Typography */
+.cellTitle {
+  font-size: 2.2rem;
+  margin-bottom: 16px;
+  color: #fff;
+  line-height: 1.2;
+}
+
+.cellText {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.quoteText {
+  position: relative;
+  z-index: 2;
+  font-size: clamp(1.5rem, 3vw, 2.2rem);
+  font-style: italic;
+  max-width: 900px;
+  line-height: 1.4;
+  color: #fff;
+}
+
+.quoteAuthor {
+  position: relative;
+  z-index: 2;
+  display: block;
+  margin-top: 2rem;
+  font-size: 1rem;
+  color: #D4AF37;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+/* ═══════════════════════════════════ */
+/* ── Mobile                        ── */
+/* ═══════════════════════════════════ */
+@media (max-width: 900px) {
+  .bentoGrid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .span1,
+  .span2,
+  .quoteCell {
+    grid-column: span 1;
+    grid-row: auto;
+  }
+
+  .quoteCell {
+    padding: 40px 20px;
+  }
+}

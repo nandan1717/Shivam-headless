@@ -1,0 +1,133 @@
+.pdpContainer {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 32px;
+  padding-top: 130px;
+  padding-bottom: 80px;
+}
+
+@media (min-width: 992px) {
+  .pdpContainer {
+    grid-template-columns: 7fr 5fr;
+    gap: 40px;
+    align-items: start;
+  }
+}
+
+.gallerySection {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+}
+
+.primaryImageWrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  min-height: 450px;
+  background: rgba(15, 15, 15, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.secondaryGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.secondaryImageWrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  background: rgba(15, 15, 15, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.image {
+  object-fit: contain;
+  padding: 12px;
+  transition: transform var(--transition-slow);
+}
+
+.primaryImageWrapper:hover .image,
+.secondaryImageWrapper:hover .image {
+  transform: scale(1.04);
+}
+
+.placeholderImage {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--glass-bg);
+  color: var(--color-text-secondary);
+}
+
+.infoSection {
+  width: 100%;
+}
+
+.stickyInfoBox {
+  position: sticky;
+  top: 130px;
+  background: rgba(15, 15, 15, 0.5);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.4);
+}
+
+@media (max-width: 768px) {
+  .pdpContainer {
+    padding-top: 100px;
+    gap: 24px;
+  }
+  
+  .secondaryGrid {
+    grid-template-columns: 1fr;
+  }
+  
+  .stickyInfoBox {
+    position: relative;
+    top: 0;
+  }
+}
+
+.recommendationsSection {
+  margin-top: 80px;
+  padding-top: 60px;
+  border-top: 1px solid var(--glass-border);
+}
+
+.recommendationsTitle {
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.recommendationsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 32px;
+}
+
+@media (max-width: 768px) {
+  .recommendationsTitle {
+    font-size: 2rem;
+  }
+  .recommendationsGrid {
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 24px;
+  }
+}
+
